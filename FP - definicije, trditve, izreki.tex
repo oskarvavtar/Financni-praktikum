@@ -1,0 +1,123 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[slovene]{babel}
+
+\usepackage{amsthm}
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{relsize}
+\usepackage{mathrsfs}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\renewcommand{\P}{\mathbb{P}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\F}{\mathcal{F}}
+\newcommand{\diff}{\overset{\text{def}}{\iff}}
+\newcommand{\set}[1]{\{#1\}}
+
+\theoremstyle{definition}
+\newtheorem{definicija}{Definicija}[section]
+
+\theoremstyle{definition}
+\newtheorem{trditev}{Trditev}[section]
+
+\theoremstyle{definition}
+\newtheorem{izrek}{Izrek}[section]
+
+\theoremstyle{definition}
+\newtheorem{metoda}{Metoda}[section]
+
+\newtheorem*{posledica}{Posledica}
+\newtheorem*{opomba}{Opomba}
+\newtheorem*{komentar}{Komentar}
+\newtheorem{lema}{Lema}
+\newtheorem*{notacija}{Notacija}
+\newtheorem*{dokaz}{Dokaz}
+\newtheorem*{posplošitev}{Posplošitev}
+\newtheorem*{dogovor}{Dogovor}
+\newtheorem*{sklep}{Sklep}
+
+\title{Finančni praktikum - definicije, trditve in izreki}
+\author{Oskar Vavtar \\
+po predavanjih profesorja Janeza Bernika}
+\date{2021/22}
+
+\begin{document}
+\maketitle
+\pagebreak
+\tableofcontents
+\pagebreak
+
+% #################################################################################################
+
+\section{Uvodna predavanja}
+\vspace{0.5cm}
+
+% *************************************************************************************************
+
+\subsection*{6. oktober}
+\vspace{0.5cm}
+
+\begin{definicija}
+
+Z obratno indukcijo definiramo 
+\begin{align*}
+U_T ~&=~ V_T,\\
+U_t ~&=~ \max \set{V_t,\max_{\tau \in S_{t,T}} \E(V_t \mid \F_t)}.
+\end{align*}
+Slučajni proces $(U_t)_{t=0}^T$ imenujemo \textit{Snellova ovojnica} za $(V_t)_{t=0}^T$.
+
+\end{definicija}
+\vspace{0.5cm}
+
+% *************************************************************************************************
+
+\subsection*{7. oktober}
+\vspace{0.5cm}
+
+\begin{definicija}
+
+$X_n \xrightarrow{(d)} X$ $\diff$ za vsako zvezno omejeno funkcijo \hbox{$f: R^m \rightarrow \R$} velja
+$$\E[f(X_n)] ~\longrightarrow~ \E[f(X)].$$
+Za $m=1$ je ekvivalentno 
+$$F_{X_n}(x) ~\longrightarrow~ F_X(x),$$
+za $\forall x$, kjer je $F_X$ zvezna.
+
+\end{definicija}
+\vspace{0.5cm}
+
+\begin{trditev}
+
+Naj bo $X_n \sim \text{Bin}(n,p_n)$. Če $\exists \lim_{n \rightarrow \infty} n \cdot p_n = \lambda > 0$, potem zaporedje limitira v porazdelitvi k $\text{Poi}(\lambda)$:
+$$X_n ~\xrightarrow[n \rightarrow \infty]{(d)}~ \text{Poi}(\lambda).$$
+
+\begin{proof}
+Ideja: dokazati moramo 
+$$\P(X_n = k) ~\xrightarrow[n \rightarrow \infty]~ \P(\text{Poi}(\lambda) = k).$$
+\end{proof}
+
+\end{trditev}
+\vspace{0.5cm}
+
+\begin{definicija}
+
+\textit{Karakteristično funkcijo} slučajne spremenljivke $X$ definiramo kot
+$$\varphi_{X_n}(t) ~=~ \E[e^{itX}].$$
+
+\end{definicija}
+\vspace{0.5cm}
+
+\begin{izrek}[L\'evyjev izrek]
+
+$X_n \xrightarrow{(d)} X$ $\iff$ $\varphi_{X_n}(t) \xrightarrow[n \rightarrow \infty]~ \varphi_X(t)$ po točkah.
+
+\end{izrek}
+\vspace{0.5cm}
+
+% *************************************************************************************************
+
+\pagebreak
+
+% #################################################################################################
+
+\end{document}
